@@ -110,6 +110,10 @@ export const updateApplicationStatus = async (req, res) => {
         const qrPayload = JSON.stringify({
           appId: application._id,
           studentId: application.student._id,
+          studentName: application.student.name,
+          documentName: application.certificateType.name,
+          appointmentDate: appointmentDate,
+          appointmentLocation: appointmentLocation,
         });
         const qrCodeDataUrl = await QRCode.toDataURL(qrPayload);
         application.appointmentDetails = {

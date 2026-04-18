@@ -10,6 +10,14 @@ import adminRoutes from "./src/routes/adminRoutes.js";
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
+
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('Unhandled Rejection at:', promise, 'reason:', reason);
+});
+process.on('uncaughtException', (error) => {
+  console.error('Uncaught Exception:', error);
+});
+
 app.use(cors());
 app.use(express.json());
 app.use("/uploads", express.static("uploads"));
@@ -19,7 +27,7 @@ app.use("/api/officer", officerRoutes);
 app.use("/api/notifications", notificationRoutes);
 app.use("/api/admin", adminRoutes);
 mongoose
-  .connect(process.env.MONGO_URI || "mongodb://127.0.0.1:27017/smartcert")
+  .connect(process.env.MONGO_URI || "mongodb://127.0.0.1:27017/smartcert", { family: 4, serverSelectionTimeoutMS: 5000 })
   .then(() => {
     console.log("Connected to MongoDB");
     app.listen(PORT, () => {
