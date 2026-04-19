@@ -136,7 +136,7 @@ export const getApplicationSubmittedTemplate = (userName, certName, status) => {
     <table width="100%" cellspacing="0" cellpadding="0">
       <tr>
         <td align="center">
-          <a href="${process.env.FRONTEND_URL || 'http://localhost:5173'}/student/applications" class="btn">View Application</a>
+          <a href="${process.env.FRONTEND_URL || 'http://localhost:5173'}" class="btn">View Application</a>
         </td>
       </tr>
     </table>
@@ -156,7 +156,7 @@ export const getDocumentReuploadedTemplate = (userName, docName, status) => {
     <table width="100%" cellspacing="0" cellpadding="0">
       <tr>
         <td align="center">
-          <a href="${process.env.FRONTEND_URL || 'http://localhost:5173'}/student/applications" class="btn">Check Portal</a>
+          <a href="${process.env.FRONTEND_URL || 'http://localhost:5173'}" class="btn">Check Portal</a>
         </td>
       </tr>
     </table>
@@ -183,7 +183,7 @@ export const getGeneralUpdateTemplate = (userName, notifyMsg, newStatus) => {
     <table width="100%" cellspacing="0" cellpadding="0">
       <tr>
         <td align="center">
-          <a href="${process.env.FRONTEND_URL || 'http://localhost:5173'}/student/applications" class="btn">View Details</a>
+          <a href="${process.env.FRONTEND_URL || 'http://localhost:5173'}" class="btn">View Details</a>
         </td>
       </tr>
     </table>
@@ -203,7 +203,7 @@ export const getActionRequiredTemplate = (userName, docName, feedback) => {
     <table width="100%" cellspacing="0" cellpadding="0">
       <tr>
         <td align="center">
-          <a href="${process.env.FRONTEND_URL || 'http://localhost:5173'}/student/applications" class="btn">Update Document</a>
+          <a href="${process.env.FRONTEND_URL || 'http://localhost:5173'}" class="btn">Update Document</a>
         </td>
       </tr>
     </table>
